@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import './globals.css'  
+import Link from 'next/link'
 export const metadata = {
     title: "Fake Store",
     description: "Fake Store",
@@ -26,12 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex shrink-0 items-center">
-                                <img className="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                                <Image className="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex space-x-4">
-                                    <a href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-                                    <a href="/products" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">products</a>
+                                    <Link href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</Link>
+                                    <Link href="/products" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">products</Link>
                                 </div>
                                 </div>
                             </div>

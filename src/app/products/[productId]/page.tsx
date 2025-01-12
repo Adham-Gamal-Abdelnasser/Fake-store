@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState, use } from 'react';
 import { Product } from '../page';
 import Loading from '../loading';
+import Image from 'next/image';
 
 export default function ProductDetails({ params }: { params: Promise<{ productId: string }> }) {
     const unwrappedParams = use(params);
@@ -31,7 +32,7 @@ export default function ProductDetails({ params }: { params: Promise<{ productId
       {!loading? <div className="bg-white">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
           
-          <img src={productDetails?.image} alt={`${productDetails?.title} ${productDetails?.description}`} className="rounded-lg bg-gray-100 max-w-sm" />
+          <Image src={productDetails?.image || ''} alt={`${productDetails?.title} ${productDetails?.description}`} className="rounded-lg bg-gray-100 max-w-sm" />
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{productDetails?.title}</h2>
             <p className="mt-4 text-gray-500">{productDetails?.description}</p>
